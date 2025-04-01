@@ -9,6 +9,9 @@ Functionality:
 - Intercepts constructors of FileOutputStream to track the file being opened for writing.
 - Captures data written via the `write()` method, storing it in a temporary buffer.
 - Dumps logged information (file path and data contents) to the console upon file closure.
+
+Example Usage:
+frida -U -N <package_name> -l .\file_monitor.js
 */
 
 
@@ -36,6 +39,15 @@ Java.perform(function() {
             //bypass logging specific file if needed
             if(openedfile !== "/path/to/file/file.extension") {
                 console.log("[*] file: "+openedfile);
+                /*
+                // Remove this comment if you want to log file content, too
+                // Convert byte array to readable format
+                 var buffer = Java.array('byte', data["content"]);
+                 var StringClass = Java.use('java.lang.String');
+                 var fileContent = StringClass.$new(buffer, "UTF-8"); 
+                 console.log("[*] file content:\n" + fileContent);
+                */
+                console.log("----------");
             }
             
             var tmp_name = openedfile.split("/");
