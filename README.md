@@ -24,7 +24,7 @@ Scripts are grouped by target platform:
 ## ✨ Highlights
 | Folder     | Key Scripts (👀 peek inside for full list)                         |
 |------------|-------------------------------------------------------------------|
-| **android**| `broadcastRec-contentPro_monitor.js`, `bypass-ssl-pinning.js`, `file_monitor.js`       |
+| **android**| `broadcastRec-contentPro_monitor.js`, `bypass-ssl-pinning.js`, `file_monitor.js`, `sharedPref_monitor.js`     |
 | **windows**| `bypass-amsi.js`    |
 
 ---
